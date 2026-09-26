@@ -1,1 +1,36 @@
-[]
+[
+  {
+    "name": "traffic_sign",
+    "type": "rectangle",
+    "attributes": [
+      {
+        "name": "sign_status",
+        "mutable": false,
+        "input_type": "select",
+        "default_value": "unknown",
+        "values": ["prohibitory", "warning", "mandatory", "direction_indication", "supplementary", "unknown"]
+      }
+    ]
+  },
+  {
+    "name": "traffic_light",
+    "type": "rectangle",
+    "attributes": [
+      {
+        "name": "signalType",
+        "mutable": false,
+        "input_type": "select",
+        "default_value": "vehicle",
+        "values": ["vehicle", "pedestrian"]
+      },
+      {
+        "name": "state",
+        "mutable": true,
+        "input_type": "select",
+        "default_value": "unknown",
+        "values": ["red", "yellow", "green", "off", "unknown"]
+      }
+    ]
+  }
+]
+

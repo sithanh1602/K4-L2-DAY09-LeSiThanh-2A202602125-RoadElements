@@ -1,8 +1,29 @@
-CVAT task reference — thay mọi placeholder mới là xong.
+CVAT task reference — Team04
 
-CVAT version: TODO
-Task calibration (tên, id): TODO
-Task bản cuối theo guideline v3 (tên, id) hoặc lý do không có: TODO
-File export đã nộp (đường dẫn trong repo): TODO
-Guideline version dán trong Guide của task: TODO
-Ghi chú cho người tiếp nhận: TODO
+Bài toán: Gán nhãn Traffic Sign, Traffic Light trên dữ liệu ảnh giao thông.
+CVAT owner: Lê Sĩ Thành — GitHub: sithanh1602.
+Tài liệu tham chiếu: _GUIDELINE V3.pdf do nhóm cung cấp.
+Schema: project/03_cvat_labels.json.
+Ontology và hướng dẫn setup: project/03_ontology_and_cvat_setup.md.
+
+Cấu hình hiện tại:
+- traffic_sign: rectangle; sign_status = prohibitory / warning / mandatory / direction_indication / supplementary / unknown; default unknown; mutable=false.
+- traffic_light: rectangle; signalType = vehicle / pedestrian; default vehicle; mutable=false.
+- traffic_light.state = red / yellow / green / off / unknown; default unknown; mutable=true.
+- Annotation dự kiến: Shape cho ảnh tĩnh độc lập.
+
+CVAT version: TODO — chưa kiểm tra máy chạy CVAT.
+Task calibration (tên, id): TODO — tên dự kiến Team04-calib-v1-Thanh; cần bổ sung tên và ID thực tế.
+Task bản cuối theo guideline v3 (tên, id) hoặc lý do không có: TODO — chưa có thông tin xác nhận task cuối và kết quả các bước calibration/blind test.
+File export đã nộp (đường dẫn trong repo): TODO — cần bổ sung đường dẫn export thực tế; export calibration lưu tại project/06_calibration_exports/ với tên riêng từng thành viên.
+Guideline version dán trong Guide của task: TODO — chưa xác nhận; project/02_guideline.md hiện là v0.
+
+Ghi chú cho người tiếp nhận:
+- Chỉ gán Traffic Sign và Traffic Light. Không gán người, xe, lane marking hoặc drivable area.
+- Kiểm tra signalType trên từng đèn vì mặc định vehicle có thể gây nhầm với pedestrian.
+- unknown là không xác định được nhóm biển/trạng thái; off là đèn không sáng. Không dùng unknown để chỉ đèn tắt.
+- Ca không xác định được signalType cần Issue và review, không được tự coi vehicle mặc định là kết luận.
+- Cần hoàn thiện sample_pack.csv và đồng bộ guideline trước khi tạo task calibration.
+- Dán nội dung guideline đã hoàn thiện vào Guide của task; tên V3 của PDF không chứng minh đã hoàn tất quy trình lab.
+- Export ảnh tĩnh bằng CVAT for images 1.1; tắt Save images và lưu annotation trước khi export.
+- Các mục TODO cần kết quả thực tế; tài liệu này chưa xác nhận task đã sẵn sàng hoặc đã nộp bài.
