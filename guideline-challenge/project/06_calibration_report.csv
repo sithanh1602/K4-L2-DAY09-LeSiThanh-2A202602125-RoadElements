@@ -1,1 +1,6 @@
 sample_id,item,values_by_annotator,diagnosis,action,rule_change
+BDD02,traffic_sign.bbox,an=box_lay_ca_cot;binh=box_sat_mat_bien,guideline_gap,revise_rule,Sửa mục 2 & 3.1: Quy định rõ BBox chỉ ôm sát mặt biển báo; không lấy cột hoặc background thừa.
+BDD04,traffic_sign.sign_status,an=warning;binh=unknown,data_ambiguity,add_escalation,Sửa mục 3.2 & 5: Biển quá nhỏ/mờ thiếu bằng chứng bắt buộc gán unknown hoặc tạo Issue UNCERTAIN_SIGN_STATUS.
+BDD06,traffic_light.state,an=green;binh=yellow,execution_error,coaching,Coaching theo mục 4.1: Chỉ đọc tín hiệu nhìn thấy ở frame hiện tại; không suy đoán trạng thái từ hành vi xe.
+BDD08,traffic_light.signalType,an=pedestrian;binh=vehicle,guideline_gap,revise_rule,Bổ sung mục 4.2 & 4.3: Phân biệt rõ vehicle và pedestrian; cấm gán yellow cho pedestrian signal nếu đèn không có đèn vàng vật lý.
+BDD10,traffic_sign.multi_panel,an=1_box_gop;binh=2_box_tach,guideline_gap,add_example,Thêm ví dụ mục 3.1: Hai panel/biển độc lập trên cùng cột bắt buộc tạo hai annotation riêng biệt (biển chính và supplementary).
